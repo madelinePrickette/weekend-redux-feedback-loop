@@ -2,7 +2,7 @@ import {useState} from 'react';
 import axios from 'axios';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import CommentsFeedbackChar from '../CommentsComponents/CommentsFeedbackChar';
+import CommentsFeedbackChar from '../CommentsFeedback/CommentsFeedbackChar';
 
 function SupportFeedbackNum({}) {
 

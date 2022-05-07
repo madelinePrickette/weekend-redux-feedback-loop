@@ -5,7 +5,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import FeelingFeedbackNum from '../FeelingFeedback/FeelingFeedbackNum';
 import UnderstandingFeedbackNum from '../UnderstandingFeedback/UnderstandingFeedbackNum';
 import SupportFeedbackNum from '../SupportFeedback/SupportFeedbackNum';
-import CommentsFeedbackChar from '../CommentsComponents/CommentsFeedbackChar';
+import CommentsFeedbackChar from '../CommentsFeedback/CommentsFeedbackChar';
 
 function App() {
 
