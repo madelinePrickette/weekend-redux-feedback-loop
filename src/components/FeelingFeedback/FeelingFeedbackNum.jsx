@@ -17,7 +17,7 @@ function FeelingFeedbackNum({}) {
     const handleFeelingsSubmission = event => {
         event.preventDefault();
         return (
-            <h4>The form was submitted</h4>
+            <h4>The form was submitted</h4> // not showing up
         )
     }
 
@@ -28,15 +28,18 @@ function FeelingFeedbackNum({}) {
                 <input 
                     required
                     placeholder="How did you feel today?"
-                    value=""
+                    value="something I havent done yet, comes from router?"
                     onChange={(event)=> setFeelings(event.target.value)}
+                    //taking value giving it to setter, setter changes state
                 />
-                <button type="submit">
+                <button type="submit"> //made two buttons because I dont
+                // know how to make one button submit and change the DOM.
+                // tried putting both on one button but it broke everything
                     Submit
                 </button>
 
                 <footer>
-                    <button onClick={handleNextToUnderstanding}>
+                    <button onClick={handleNextToUnderstanding}> // works
                         Next to understanding
                     </button>
                 </footer>
