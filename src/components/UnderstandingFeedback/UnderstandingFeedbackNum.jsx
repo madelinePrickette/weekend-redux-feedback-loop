@@ -12,6 +12,15 @@ function UnderstandingFeedbackNum({}) {
         history.push("/SupportFeedbackNum")
     }
     
+    const handleUnderstandingSubmission = event => {
+        event.preventDefault();
+        setType(event.target.value) //dispatch for understanding
+        console.log(event.target.value);
+        return (
+            <h4>The understanding form was submitted</h4>
+        )
+    }
+
     return (
         <>
             <h2>This is the understanding page.</h2>

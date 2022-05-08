@@ -17,21 +17,14 @@ function FeelingFeedbackNum({}) {
 
     const handleFeelingsSubmission = event => {
         event.preventDefault();
+        setType(event.target.value) //dispatch?????
+        console.log(event.target.value);
         return (
-            <h4>The form was submitted</h4> // not showing up
+            <h4>The feelings form was submitted</h4>
         )
     }
 
-    axios({ // is this supposed to go in each component file?
-        // that was my plan but I'm unsure its correct
-        method: 'POST',
-        url: '/',
-        data: {feelings}
-    }).then((response) => {
-        console.log('this is post response from feeling feedback component', response)
-    }).catch((error) => {
-        console.log('error in feeling feedback component', error)
-    })
+    // 
 
     return (
         //made two buttons because I dont
@@ -39,25 +32,22 @@ function FeelingFeedbackNum({}) {
         //tried putting both on one button but it broke everything
         <>
             <h2>This is the feeling page</h2>
-                <form onSubmit={handleFeelingsSubmission}>
+                <form onSubmit={handleFeelingsSubmission} >
                 <input 
                     required
                     placeholder="How did you feel today?"
-                    value="something I havent done yet, comes from router?"
+                    value={feelings} 
                     onChange={(event)=> setFeelings(event.target.value)}
-                    // 
+                    // something I havent done yet, comes from router?
                 />
                 {/* taking value giving it to setter, setter changes state */}
-                
-                <button type="submit"> 
-                    Submit
-                </button>
 
                 <footer>
                 {/* works */}
                     <button onClick={handleNextToUnderstanding}> 
-                        Next to understanding
+                        Next to understanding 
                     </button>
+                    //how do i make this button have a feelings reducer to store the values
                 </footer>
             </form>
         </>
