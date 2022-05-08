@@ -6,18 +6,41 @@ import UnderstandingFeedbackNum from '../UnderstandingFeedback/UnderstandingFeed
 
 function FeelingFeedbackNum({}) {
 
+    const [feelings, setFeelings] = useState('');
+
     const history = useHistory();
 
     function handleNextToUnderstanding(){
         history.push("/UnderstandingFeedbackNum")
     }
 
+    const handleFeelingsSubmission = event => {
+        event.preventDefault();
+        return (
+            <h4>The form was submitted</h4>
+        )
+    }
+
     return (
         <>
             <h2>This is the feeling page</h2>
-            <button onClick={handleNextToUnderstanding}>
-                Next to understanding
-            </button>
+                <form onSubmit={handleFeelingsSubmission}>
+                <input 
+                    required
+                    placeholder="How did you feel today?"
+                    value=""
+                    onChange={(event)=> setFeelings(event.target.value)}
+                />
+                <button type="submit">
+                    Submit
+                </button>
+
+                <footer>
+                    <button onClick={handleNextToUnderstanding}>
+                        Next to understanding
+                    </button>
+                </footer>
+            </form>
         </>
     )
 }
