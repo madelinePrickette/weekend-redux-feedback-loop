@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-
+import router from /Routes/router.js
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

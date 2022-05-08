@@ -6,6 +6,8 @@ import CommentsFeedbackChar from '../CommentsFeedback/CommentsFeedbackChar';
 
 function SupportFeedbackNum({}) {
 
+    const [support, setSupport] = useState('');
+
     const history = useHistory();
 
     function handleNextToComments(){
