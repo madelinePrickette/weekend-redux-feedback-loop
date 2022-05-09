@@ -6,19 +6,21 @@ import SupportFeedbackNum from '../SupportFeedback/SupportFeedbackNum';
 
 function UnderstandingFeedbackNum({}) {
 
-    const history = useHistory();
+    const [understanding, setunderstanding] = useState('');
 
-    function handleNextToSupport(){
-        history.push("/SupportFeedbackNum")
-    }
+    const history = useHistory();
     
     const handleUnderstandingSubmission = event => {
         event.preventDefault();
         setType(event.target.value) //dispatch for understanding
         console.log(event.target.value);
-        return (
-            <h4>The understanding form was submitted</h4>
-        )
+        dispatch({
+            type: 'SET_UNDERSTANDING',
+            payload: feelings
+          })
+        history.push("/SupportFeedbackNum")
+
+
     }
 
     return (

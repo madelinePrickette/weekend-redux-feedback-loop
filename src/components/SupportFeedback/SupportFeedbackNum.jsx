@@ -9,18 +9,16 @@ function SupportFeedbackNum({}) {
     const [support, setSupport] = useState('');
 
     const history = useHistory();
-
-    function handleNextToComments(){
-        history.push("/CommentsFeedbackChar")
-    }
     
     const handleSupportSubmission = event => {
         event.preventDefault();
         setType(event.target.value) //dispatch for support form
         console.log(event.target.value);
-        return (
-            <h4>The support form was submitted</h4>
-        )
+        dispatch({
+            type: 'SET_SUPPORT',
+            payload: feelings
+          })
+        history.push("/CommentsFeedbackChar")
     }
 
     return (

@@ -12,16 +12,18 @@ function FeelingFeedbackNum({}) {
     const history = useHistory();
 
     function handleNextToUnderstanding(){
-        history.push("/UnderstandingFeedbackNum")
+        
     }
 
     const handleFeelingsSubmission = event => {
         event.preventDefault();
         setType(event.target.value) //dispatch?????
         console.log(event.target.value);
-        return (
-            <h4>The feelings form was submitted</h4>
-        )
+        dispatch({
+            type: 'SET_FEELING',
+            payload: feelings
+          })
+        history.push("/UnderstandingFeedbackNum")
     }
 
     // 
@@ -41,14 +43,6 @@ function FeelingFeedbackNum({}) {
                     // something I havent done yet, comes from router?
                 />
                 {/* taking value giving it to setter, setter changes state */}
-
-                <footer>
-                {/* works */}
-                    <button onClick={handleNextToUnderstanding}> 
-                        Next to understanding 
-                    </button>
-                    //how do i make this button have a feelings reducer to store the values
-                </footer>
             </form>
         </>
     )
